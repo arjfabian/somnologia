@@ -20,7 +20,7 @@
                 <div class="grid grid-cols-2 gap-6">
                     <div>
                         <ul role="list" class="space-y-6">
-                            {% for diary in diarys %}
+                            {% for dream in dreams %}
                                 <li class="relative flex gap-x-4">
                                     <div class="absolute -bottom-6 left-0 top-0 flex w-6 justify-center">
                                     <div class="w-px bg-gray-200"></div>
@@ -30,11 +30,11 @@
                                     </div>
                                     <div>
                                     <p class="py-0.5 text-xs/5 text-gray-500">
-                                        <span class="font-medium text-gray-900">{{diary.title}}</span><br>
-                                        {{diary.text}}
+                                        <span class="font-medium text-gray-900">{{dream.title}}</span><br>
+                                        {{dream.text}}
                                     </p>
                                     <div class="flex gap-[8px] text-xs/5 text-gray-500 mt-2">
-                                        {% for person in diary.persons.all %}
+                                        {% for person in dream.persons.all %}
                                             <img src="{{person.photo.url}}" class="w-10 h-10 rounded-md bg-cover" alt="">
                                         {% endfor %}    
                                         
@@ -50,14 +50,14 @@
                     </div>
 
                     <div>
-                        {% if diarys %}
-                            <h1 class="text-balance text-2xl font-semibold tracking-tight text-slate-600 ">You had {{total}} diary(s) on that day.</h1>
+                        {% if dreams %}
+                            <h1 class="text-balance text-2xl font-semibold tracking-tight text-slate-600 ">You had {{total}} dream(s) on that day.</h1>
                             <br>
                             <a href="{% url 'delete' %}?date={{date}}" class="mt-6 rounded-md cursor-pointer bg-red-600 px-3.5 py-2.5 text-xl font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 mt-12">Delete all entries</a>
                             
 
                         {% else %}
-                            <h1 class="text-balance text-2xl font-semibold tracking-tight text-slate-600 ">You have no diarys from that day.</h1>
+                            <h1 class="text-balance text-2xl font-semibold tracking-tight text-slate-600 ">You have no dreams from that day.</h1>
                         {% endif %}
                     </div>
 

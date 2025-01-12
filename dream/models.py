@@ -7,19 +7,19 @@ class Person(models.Model):
   def __str__(self):
     return self.name
     
-class Diary(models.Model):
+class Dream(models.Model):
   tags_choices = (
-    ('T', 'Travel'),
-    ('W', 'Work')
+    ('R', 'Realistic'),
+    ('N', 'Nightmare')
   )
 
   title = models.CharField(max_length=100)
   tags = models.TextField()
   persons = models.ManyToManyField(Person, null=True, blank=True)
-  text = models.TextField()
+  description = models.TextField()
   creation_date = models.DateTimeField(auto_now_add=True)
 
-  def __str__(self):
+  def __str__(self):  
     return self.title
   
   def get_tags(self):

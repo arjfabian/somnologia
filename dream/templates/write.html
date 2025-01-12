@@ -28,19 +28,19 @@
                     <div>
                         <label class="block text-sm/6 font-medium text-gray-200">Title</label>
                         <div class="mt-2">
-                        <input type="text" name="entry-title" id="entry-title" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="Write a title...">
+                        <input type="text" name="title" id="title" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="Write a title...">
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="mt-2">
                                 <label for="email" class="block text-sm/6 font-medium text-gray-200 mt-2">Tags</label>
-                                <select multiple name="entry-tags" id="entry-tags" class="block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                                    <option value="Travel">Travel</option>
-                                    <option value="Work">Work</option>
+                                <select multiple name="tags" id="tags" class="block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                    <option value="Realistic">Realistic</option>
+                                    <option value="Nightmare">Nightmare</option>
                                 </select>
                             </div>
                             <div class="mt-2">
                                 <label for="email" class="block text-sm/6 font-medium text-gray-200 mt-2">People</label>
-                                <select multiple name="entry-people" id="entry-people" class="block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                <select multiple name="persons" id="persons" class="block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                     {% for person in persons %}
                                         <option value="{{person.id}}">{{person.name}}</option>
                                     {% endfor %}
@@ -51,8 +51,8 @@
                         
                         
                         <div class="mt-2">
-                            <label for="email" class="block text-sm/6 font-medium text-gray-200 mt-2">Text</label>
-                            <textarea name="entry-text" id="entry-text" class="block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+                            <label for="email" class="block text-sm/6 font-medium text-gray-200 mt-2">Description</label>
+                            <textarea name="description" id="description" class="block w-full rounded-md bg-white px-3 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
                         </div>
 
                     </div>
@@ -87,7 +87,7 @@
         console.log("test")
         const date = input.value;
         if (date) {
-            link.href = `/diary/read?date=${date}`;
+            link.href = `/dream/read?date=${date}`;
         } else {
             link.href = "#"; 
         }
