@@ -13,11 +13,12 @@ class Dream(models.Model):
     ('N', 'Nightmare')
   )
 
-  title = models.CharField(max_length=100)
-  tags = models.TextField()
-  persons = models.ManyToManyField(Person, null=True, blank=True)
+  # Removed title field
+  # title = models.CharField(max_length=100)
+  creation_date = models.DateField(auto_now_add=True)   # Changed DateTimeField to DateField
   description = models.TextField()
-  creation_date = models.DateTimeField(auto_now_add=True)
+  persons = models.ManyToManyField(Person, null=True, blank=True)
+  tags = models.TextField()
 
   def __str__(self):  
     return self.title
